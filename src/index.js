@@ -6,7 +6,7 @@ import "./index.css";
 
 const BookList = () => {
   return (
-    <section>
+    <section className="booklist">
       <Book />
       <Book />
       <Book />
@@ -16,26 +16,14 @@ const BookList = () => {
 };
 
 const Book = () => {
+  const author = "Bill O'neill";
+  const title = "Random Fun Facts";
   return (
-    <article>
-      <Image />
-      <Title />
-      <Author />
+    <article className="book">
+      <img src="./images/book1.jpg" alt="Random Fun Facts" />;<h2>{title}</h2>
+      <h4>{author.toUpperCase()}</h4>
     </article>
   );
-};
-
-const Image = () => {
-  return (
-    <img
-      src="https://images-na.ssl-images-amazon.com/images/I/715SNwhiyML._AC_UL300_SR300,200_.jpg"
-      alt="Curious Minds Book"
-    />
-  );
-};
-const Title = () => <h2>Intersting Facts For Curious Minds</h2>;
-const Author = () => {
-  return <h4>Jordan Moore</h4>;
 };
 
 const container = document.getElementById("root");
