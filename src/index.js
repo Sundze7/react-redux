@@ -4,43 +4,49 @@ import { createRoot } from "react-dom/client";
 
 import "./index.css";
 
-const firstBook = {
-  author: "Bill O'neill",
-  title: "Random Fun Facts",
-  img: "./images/book1.jpg",
-};
+const books = [
+  {
+    author: "Bill O'neill",
+    title: "Random Fun Facts",
+    img: "./images/book1.jpg",
+    id: 1,
+  },
 
-const secondBook = {
-  author: "Nat Geo",
-  title: "50 States 5k Ideas",
-  img: "./images/book2.jpg",
-};
+  {
+    author: "Nat Geo",
+    title: "50 States 5k Ideas",
+    img: "./images/book2.jpg",
+    id: 2,
+  },
+];
 
 const BookList = () => {
   return (
     <section className="booklist">
-      <Book
-        author={firstBook.author}
-        title={firstBook.title}
-        img={firstBook.img}
-      />
-      <Book
-        author={secondBook.author}
-        title={secondBook.title}
-        img={secondBook.img}
-      />
-      <Book />
-      <Book />
+      {books.map((book) => {
+        // const { img, title, author, id } = book;
+        // return <Book key={id} img={img} title={title} author={author} />; OR
+
+        // return <Book book={book} key={book.id} />; OR
+
+        return <Book {...book} key={book.id} />;
+      })}
     </section>
   );
 };
 
 const Book = (props) => {
+  const { img, title, author } = props;
   return (
     <article className="book">
-      <img src={props.img} alt={props.title} />
-      <h2>{props.title}</h2>
-      <h4>{props.author}</h4>
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+      <h4>{author}</h4>
+      {/* <p>
+        For some reason i just cant get lorem to generate text for me in this
+        other computer
+      </p>
+      <button>click me</button> */}
     </article>
   );
 };
