@@ -1,0 +1,2 @@
+the map fxn creates a new array from calling a function for every array element
+Prop Drilling -> can only pass props down in React - from parent to child. Can do otherwise using redux, external libraries
