@@ -3,22 +3,8 @@ import { createRoot } from "react-dom/client";
 // createRoot replaced the ReactDom library
 
 import "./index.css";
-
-const books = [
-  {
-    author: "Bill O'neill",
-    title: "Random Fun Facts",
-    img: "./images/book1.jpg",
-    id: 1,
-  },
-
-  {
-    author: "Nat Geo",
-    title: "50 States 5k Ideas",
-    img: "./images/book2.jpg",
-    id: 2,
-  },
-];
+import { books } from "./books";
+import Book from "./Book";
 
 const BookList = () => {
   const getBook = (id) => {
@@ -63,29 +49,6 @@ const BookList = () => {
 //     </section>
 //   );
 // };
-
-const Book = (props) => {
-  const { img, title, author, getBook, id } = props;
-  // this is a wrapper function which helps pass down the id of getBook() as prop from parent to child
-  const getSingleBook = () => {
-    getBook(id);
-  };
-  return (
-    <article className="book">
-      <img src={img} alt={title} />
-      <h2>{title}</h2>
-      <button onClick={getSingleBook} style={{ padding: "0.5rem" }}>
-        Click me
-      </button>
-      <h4>{author}</h4>
-      {/* <p>
-        For some reason i just cant get lorem to generate text for me in this
-        other computer
-      </p>
-      <button>click me</button> */}
-    </article>
-  );
-};
 
 const container = document.getElementById("root");
 const root = createRoot(container);
