@@ -1,7 +1,7 @@
 import React from "react";
 
 const Book = (props) => {
-  const { img, title, author, getBook, id } = props;
+  const { img, title, author, getBook, number, id } = props;
   // this is a wrapper function which helps pass down the id of getBook() as prop from parent to child
   const getSingleBook = () => {
     getBook(id);
@@ -14,6 +14,7 @@ const Book = (props) => {
         Click me
       </button>
       <h4>{author}</h4>
+      <span className="number">#{number + 1}</span>
       {/* <p>
         For some reason i just cant get lorem to generate text for me in this
         other computer

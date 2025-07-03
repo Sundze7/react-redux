@@ -12,17 +12,22 @@ const BookList = () => {
     console.log(book);
   };
   return (
-    <section className="booklist">
-      {/* <EventExample /> */}
-      {books.map((book) => {
-        // const { img, title, author, id } = book;
-        // return <Book key={id} img={img} title={title} author={author} />; OR
+    <div>
+      <h1>amazon best sellers</h1>
+      <section className="booklist">
+        {/* <EventExample /> */}
+        {books.map((book, index) => {
+          // const { img, title, author, id } = book;
+          // return <Book key={id} img={img} title={title} author={author} />; OR
 
-        // return <Book book={book} key={book.id} />; OR
+          // return <Book book={book} key={book.id} />; OR
 
-        return <Book {...book} key={book.id} getBook={getBook} />;
-      })}
-    </section>
+          return (
+            <Book {...book} key={book.id} getBook={getBook} number={index} />
+          );
+        })}
+      </section>
+    </div>
   );
 };
 
