@@ -1,6 +1,6 @@
 import React from "react";
 function App() {
-  return <div>New </div>;
+  return <h2>Redux Toolkit </h2>;
 }
 
 export default App;

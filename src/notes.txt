@@ -1,2 +1,12 @@
 the map fxn creates a new array from calling a function for every array element
 Prop Drilling -> can only pass props down in React - from parent to child. Can do otherwise using redux, external libraries
+
+npm install @reduxjs/toolkit react-redux 
+
+The redux-toolkit consists of of some libraries like..
+> redux (core lib, state managment)
+> immer (allows to mutate state)
+> redux-thunk (handle async actions)
+> reselect (simplifies reducer functions)
+
+> redux is not specific to react; it can be used with diff't frontend frameworks
