@@ -10,3 +10,5 @@ The redux-toolkit consists of of some libraries like..
 > reselect (simplifies reducer functions)
 
 > redux is not specific to react; it can be used with diff't frontend frameworks
+
+> Provider is the lib that connects redux store to our app - reason why we wrap it around our app
